@@ -10,7 +10,14 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("submit fatto");
+    if (newTitle.trim() === "") return;
+
+    const newArticle = {
+      id: Date.now(),
+      title: newTitle.trim(),
+    };
+    setArticles([...articles, newArticle]);
+    setNewTitle("");
   }
   return (
     <div>
