@@ -8,10 +8,14 @@ function App() {
   ]);
   const [newTitle, setNewTitle] = useState("");
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("submit fatto");
+  }
   return (
     <div>
       <h1>Blog</h1>|
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Titolo nuovo articolo..."
