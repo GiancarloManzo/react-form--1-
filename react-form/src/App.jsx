@@ -6,11 +6,18 @@ function App() {
     { id: 2, title: "secondo articolo" },
     { id: 3, title: "terzo articolo" },
   ]);
+  const [newTitle, setNewTitle] = useState("");
+
   return (
     <div>
       <h1>Blog</h1>|
       <form>
-        <input type="text" placeholder="Titolo nuovo articolo..." />
+        <input
+          type="text"
+          placeholder="Titolo nuovo articolo..."
+          value={newTitle}
+          onChange={(event) => setNewTitle(event.target.value)}
+        />
         <button type="submit">Aggiungi</button>
       </form>
       <ul>
